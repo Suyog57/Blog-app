@@ -5,7 +5,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store";
 import { useNavigate } from "react-router-dom";
-// import { authActions } from "../store";
 
 const Auth = () => {
   const navigate = useNavigate();

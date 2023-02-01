@@ -5,7 +5,7 @@ const blogRouter = require("./routes/blogRoutes");
 const cors = require("cors");
 const app = express();
 app.use(cors());
-app.use(express.json()); //to tell app server that we are receiving json data
+app.use(express.json());
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
 
@@ -18,7 +18,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-// const port = process.env.PORT || 8082;
-
-// app.listen(port, () => console.log(`Server running on port ${port}`));

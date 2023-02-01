@@ -1,11 +1,11 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 const Blog = require("../models/blogModel");
 const User = require("../models/userModel");
 
 const getAllBlogs = async (req, res, next) => {
   let blogs;
   try {
-    blogs = await Blog.find().populate("user") ;
+    blogs = await Blog.find().populate("user");
   } catch (err) {
     console.log(err);
   }
@@ -114,4 +114,11 @@ const getByUserId = async (req, res, next) => {
   }
   return res.status(200).json({ user: userBlogs });
 };
-module.exports = { getAllBlogs, addBlog, updateBlog, getById, deleteBlog, getByUserId };
+module.exports = {
+  getAllBlogs,
+  addBlog,
+  updateBlog,
+  getById,
+  deleteBlog,
+  getByUserId,
+};
